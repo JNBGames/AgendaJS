@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Entrar na Agenda</title> 
+</head>
+<body>
+    <nav>
+        
+        <h2>Agenda de Contatos</h2> 
+    </nav>
+    <div class="auth-wrapper"> 
+        <!-- Div quadrada -->
+        <div class="auth-card"> 
+            <img src="https://th.bing.com/th/id/OIP.N56iZstwVbOkVCxZGv0RZQHaHa?rs=1&pid=ImgDetMain" alt="Logo da empresa">
+         
+            <input type="text" placeholder="Nome de usuário"> 
+            <!-- Campo de usuário -->
+            <input type="password" placeholder="Senha de acesso"> 
+            <button>Acessar</button> 
+        </div>
+    </div>
+</body>
+
+<script>
+  const authForm = document.querySelector('.auth-card'); 
+  const userInput = document.querySelector('input[type="text"]'); 
+  const passwordInput = document.querySelector('input[type="password"]'); 
+  const accessButton = document.querySelector('button'); 
+
+  accessButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const username = userInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (username === 'admin' && password === 'admin') {
+      window.location.href = 'agenda.html';
+    } else {
+      userInput.classList.add('invalid-input'); 
+      passwordInput.classList.add('invalid-input');
+      alert('Credenciais inválidas');
+    }
+  });
+</script>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Contatos</title>      
+  <style>
+  .top-bar {
+    background-color: #53d4ff;
+    padding: 10px;
+    text-align: left; 
+  }
+  
+  .top-bar h1 {
+    color: #fff; 
+    font-size: 18px; 
+  }
+  
+  .form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+  
+  .input-fields {
+    flex: 2.5;
+    background-color: #b3b3b3; 
+    padding: 15px; 
+    border: 1px solid #ccc;
+  }
+  
+  .input-fields label {
+    color: #fff; 
+  }
+  
+  .input-fields input[type="text"] {
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .button-group {
+    
+    flex: 2;
+    margin-left: 20px;
+  }
+  
+  .button-group button {
+    width: 120px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 3px; 
+  }
+  
+  .button-group button#adicionar-contato {
+    background-color: #2ECC40;
+    color: #fff;
+  }
+  
+  .button-group button#atualizar-contato {
+    background-color: #F7DC6F; 
+    color: #333;
+  }
+  
+  .button-group button#salvar-contato {
+    background-color: #53d4ff; 
+    color: #fff;
+  }
+  
+  .button-group button#cancelar-contato {
+    background-color: #fff;
+    color: #ADD8E6; 
+    border: 1px solid #ADD8E6;
+  }
+  
+  .button-group button#excluir-contato {
+    background-color: #E74C3C; 
+    color: #fff;
+  }
+  
+  .contact-grid {
+    margin: 20px;
+  }
+  
+  .pagination-controls {
+    
+    margin-top: 10px;
+    margin-left: 20px; 
+  }
+  
+  .pagination-controls button {
+    width: 10%;
+    height: 4%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 3px;
+  }
+  
+  .pagination-controls button#pagina-anterior {
+   
+    color: #fff;
+  }
+  
+  
+  
+  .pagination-controls button#primeira-pagina {
+   
+    color: #fff;
+  }
+  
+  .pagination-controls button#ultima-pagina {
+    
+    color: #fff;
+  }
+
+ 
+  @media screen and (min-width: 1200px) { 
+  .button-group {
+    flex-direction: column;
+  }
+  .button-group button {
+    width: 300px;
+    margin-bottom: 10px; 
+  }
+  .button-group {
+  
+    display: flex;
+    flex: 2;
+    margin-left: 20px;
+  }
+
+  .button-group button {
+    width: 120px;
+  
+}
+
+.input-fields {
+    flex: 1;
+    background-color: #b3b3b3; 
+    padding: 15px; 
+    border: 1px solid #ccc;
+  }
+
+  .pagination-controls button {
+    width: 5%;
+    height: 4%;
+
+}
+
+  }
+
+
+  </style>                             
+</head>
+<body>
+  <div class="top-bar">
+    <h1>Cadastro de Contatos</h1>
+  </div>
+  
+  <div class="form-wrapper">
+    <div class="input-fields">
+
+      <label for="nome-completo">Nome </label>
+      <input type="text" id="nome-completo" name="nome-completo">
+
+      <label for="endereco-rua">Sobrenome</label>
+      <input type="text" id="sobrenome-contato" name="endereco-rua">
+
+      <label for="telefone-contato">Endereço</label>
+      <input type="text" id="endereco-rua" name="telefone-contato">
+
+      <label for="sobrenome-contato">Telefone</label>
+      <input type="text" id="telefone-contato" name="sobrenome-contato">
+
+    </div>
+    <div class="button-group">
+      <button id="adicionar-contato">INCLUIR</button>
+      <button id="atualizar-contato">EDITAR</button>
+      <button id="salvar-contato">SALVAR</button>
+      <button id="cancelar-contato">CANCELAR</button>
+      <button id="excluir-contato">EXCLUIR</button>
+    </div>
+  </div>
+  
+  <div class="contact-grid">
+    <ul id="lista-contatos"></ul>
+  </div>
+  
+  <div class="pagination-controls">
+    <button id="pagina-anterior">|&lt</button>
+    <button id="proxima-pagina">&lt;</button>
+    <button id="primeira-pagina">&gt;</button>
+    <button id="ultima-pagina">&gt|</button>
+    <span id="status-pagina"></span>
+
+  </div>                                                                                       </body>
+  <script src="script.js"></script>
+
+</html> 
